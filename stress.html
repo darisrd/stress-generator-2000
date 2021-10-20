@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        /* Center the loader */
+        #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Add animation to "page content" */
+        .animate-bottom {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 1s;
+            animation-name: animatebottom;
+            animation-duration: 1s
+        }
+
+        @-webkit-keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0px;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                bottom: -100px;
+                opacity: 0
+            }
+
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
+
+        #myDiv {
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+
+    <div id="loader"></div>
+
+    <div style="display:none;" id="myDiv" class="mt-5 animate-bottom">
+        <h1>Tada!</h1>
+        <p>Pokoknya WANGY! Hu HA HU HAAA HUAAAAAHH</p>
+        <p>Ahh yess, miauw...</p>
+        <p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <div class="container" style="width: 30%;">
+            <div class="mb-3">
+                <label for="waifu" class="form-label">Waifu-mu</label>
+                <input type="text" class="form-control" id="waifu" name="waifu">
+            </div>
+            <div class="mb-3">
+                <button onclick="return summon();" class="btn btn-primary">Generate!</button>
+            </div>
+        </div>
+        <div class="container" style="width: 60%;" id="info"></div>
+        <script type="text/javascript">
+            function summon() {
+                var waifu = document.getElementById("waifu").value;
+                var str = waifu;
+                var waifoo = str.toUpperCase();
+                var r = waifoo + " ";
+                var waifoo10 = r.repeat(10);
+                document.getElementById("info").innerHTML = waifoo10+"..... AAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAGH AAAAAAAAAAAAAAAAAAAAAAAGH! WANGI WANGI WANGI WANGI HU HA HU HA HU HA, aaaah baunya  wangy wangi, aku mau nyiumin aroma wanginya "+ waifu +" AAAAAAAAH Rambutnya. AAAHHH rambutnya "+ waifu +" juga pengen aku elus-elus ----- AAAAAH "+ waifu +"  keluar pertama kali juga manis!!! Dia itu juga manis banget AAAAAAAAH "+ waifoo +" LUCCUUUUUUUUUUUUUUU......... Apa? "+ waifu +" itu gak  yata? Cuma karakter 2 dimensi katamu? Nggak ngak ngak ngak ngak NGAAAAAAAAK GUA GAK PERCAYA ITU DIA NYATA NGAAAAAAAAAAAAAAAAAK dasar  BANGSAAAAAT! GUA GAK PEDULI SAMA KENYATAAN POKOKNYA GAK PEDULI!! "+ waifu +" ngeliat gw. "+ waifu +" di laptop ngeliatin gw. "+ waifu +"... kamu percaya sama aku? AAAAAAAAHHH syukur "+ waifu +" gak malu merelakan aku aaaaaah!!! YEAAAAAAAAAAAH GUA MASIH PUNYA "+ waifoo +" , SENDIRI PUN NGGAK MASALAH AAAAAAAAAAAAAAAH "+ waifoo10 +"KIRIMKANLAH CINTAKU PADA "+ waifu +" KIRIMKAN KE "+ waifoo +" YEEAAAAAAAH";
+            }
+        </script>
+    </div>
+
+    <script>
+        var myVar;
+
+        function myFunction() {
+            myVar = setTimeout(showPage, 3000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
